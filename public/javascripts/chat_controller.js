@@ -7,7 +7,7 @@ angular.module('app', ["pubnub.angular.service"])
          subscribe_key: 'sub-c-a6a3c768-640c-11e6-962a-02ee2ddab7fe',
          uuid: $scope.uuid
        });
-    });
+
      // Send the messages over PubNub Network
      $scope.sendMessage = function() {
         // Don't send an empty message
@@ -47,5 +47,8 @@ angular.module('app', ["pubnub.angular.service"])
 
      // A function to display a nice uniq robot avatar
      $scope.avatarUrl = function(uuid){
-         return 'http://robohash.org/'+uuid+'?set=set2&bgset=bg2&size=70x70';
+         var daURL = 'http://robohash.org/'+uuid+'?set=set2&bgset=bg2&size=70x70';
+         console.log(daURL);
+         return daURL;
      };
+  });
