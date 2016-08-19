@@ -14,7 +14,7 @@ html
     link(rel='stylesheet', href='css/main.css')
     //if lte IE 8
       link(rel='stylesheet', href='css/ie8.css')
-  body.homepage
+  body.no-sidebar
     #page-wrapper
       // Header
       #header
@@ -25,8 +25,6 @@ html
               a#logo(href='index.html') Studious
             hr
             p An online study environment built for students
-          footer
-            a.button.circled.scrolly(href='#banner') Start
         // Nav
         nav#nav
           ul
@@ -40,64 +38,47 @@ html
               a(href='/TBD') Merch
             li
               a(href='/Blog') Blog
-
-      // Banner
-      section#banner
-        header
-          h2
-            | Hi. Welcome to&nbsp
-            strong Studious
-            | .
-          p
-            | A free web app built by&nbsp
-            a(href='http://richardwen.tech') Richard Wen
-            | .
-            | 							Built using the&nbsp
-            a(href='https://html5up.net') Helios
-            |  HTML template
-
       // Main
-      .wrapper.style2
-        article#main.container.special
-          a.image.featured(href='#')
-            img(src='images/pic17.jpg', alt='')
-          header
-            h2
-              a(href='#') Built by students for students
-            p
-              | Studious is a web app that connects students with powerful tools to meet their educational demands.
-              | Featuring a real time chat, voice communication, and live blackboard, Studious allows students to connect through learning.
-
-      // Features
       .wrapper.style1
-        section#features.container.special
-          header
-            h2 What does Studious have to offer?
-          .row
-            article.4u.special(class='12u(mobile)')
-              a.image.featured(href='#')
-                img(src='images/pic18.jpg', alt='')
-              header
-                h3
-                  a(href='#') Voice Chat
+        .container
+          article#main.special
+            header
+              h2
+                a(href='#') And So It Begins
               p
-                | Communicate with fellow students with nothing more than a browser, a headset, and an internet connection
-            article.4u.special(class='12u(mobile)')
-              a.image.featured(href='#')
-                img(src='images/pic20.jpg', alt='')
+                | The First Week
+            a.image.featured(href='#')
+              img(src='images/beginning.jpg', alt='')
+            p
+              | Coming off of around three false starts on this project, I'm glad that I've actually gotten going
+              | on a relatively good start. With a chat and blackboard both operating as intended, the web app is set
+              | to keep growing. I've decided to start keeping a blog in order to track my thoughts on the project and
+              | what my goals are and what I learn to achieve them. The blog also helps break up the monotony of starting
+              | at HTML/CSS/Javascript all day, so it's a welcome reprieve.
+            section
               header
-                h3
-                  a(href='#') LaTeX Supported Chat
+                h3 Goals
               p
-              | No more awkward '^' or '/' when asking about equations, Studious accurately represents mathematical equations in its chat
-            article.4u.special(class='12u(mobile)')
-              a.image.featured(href='#')
-                img(src='images/pic19.png', alt='')
+                | Studious was born out of my frustration with getting asked for math/physics help over messenger. I hate having to
+                | parse stupid amounts of text to understand what my friend is asking about when they're messaging me an
+                | equation they can't solve. Voice calling through Skype didn't much help because it's a pain in the ass
+                | to describe things like Force Diagrams without having the ability. Thus, Studious came to life.
+              p
+                | A live Blackboard, LaTeX supported chat, and basic chat features to still enable communcication. Those
+                | are the three big features that I'm hoping to implement on Studious and am progressing to do so.
+            section
               header
-                h3
-                  a(href='#') Real Time Blackboard
+                h3 So Far
               p
-                | Have an idea you can't quite communicate with words? Draw it out on a real time updating blackboard
+                | So much done in the first week. After bashing my head at building a few other web apps, I discovered
+                | the Pubnub API which I realized would be perfect for this project. Pubnub is interesting in that
+                | envoking an instance of Pubnub simply allows an application access to Pubnub functions, which runs
+                | against what I'm commonly used to when creating outside objects. Thanks in large part to some Quick Start
+                | guides and detailed tutorials, I had a chat and Blackboard up within a few days of learning how to use it.
+                | This has also been an app subject to hella front-end work. I decided to use a HTML template to allow me
+                | the chance to quickly get into playing around with the Pubnub API, but still wound up having to finable
+                | objects/CSS to keep things looking nice. Shout outs to my friend Aaron who gave me some advice on how to
+                | handle the chat scrolling in a clean, effective manner
 
       // Footer
       #footer
