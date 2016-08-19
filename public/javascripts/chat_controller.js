@@ -18,7 +18,23 @@ angular
         ssl: true,
         uuid: $scope.uuid
     });
-
+     pubnub.history({
+      channel: $scope.channel,
+      count: 50,
+      callback: function( m)
+      {
+        console.log(m);
+        for(i = 0; i < m[0].length; i++)
+        {
+            $scope.messages.push(m[0][i]);
+        }
+       for(i = 0; i < $scope.messages.length; i++)
+           {
+               console.log($scope.messages[i]);
+           }
+            $scope.scrollDown(400);
+      }
+    });
     // Fetching a uniq random avatar from the robohash.org service.
     $scope.avatarUrl = function(uuid) {
         return '//robohash.org/' + uuid + '?set=set2&bgset=bg2&size=70x70';
@@ -38,9 +54,7 @@ angular
                 sender_uuid: $scope.uuid,
                 date: new Date()
             },
-            callback: function(m) {
-                console.log(m);
-            }
+
         });
         // Reset the messageContent input
         $scope.messageContent = '';
@@ -52,7 +66,6 @@ angular
         channel: $scope.channel,
         triggerEvents: ['callback']
     });
-
     // Make it possible to scrollDown to the bottom of the messages container
     $scope.scrollDown = function(time) {
         var $elem = $('.collection');
@@ -60,12 +73,15 @@ angular
             scrollTop: $elem.height()
         }, time);
     };
-$scope.scrollDown(400);
-// Listenning to messages sent.
-    $scope.$on(Pubnub.getMessageEventNameFor($scope.channel), function(ngEvent, m) {
-        $scope.$apply(function() {
-            $scope.messages.push(m)
+
+
+
+    $scope.scrollDown(400);
+    // Listenning to messages sent.
+        $scope.$on(Pubnub.getMessageEventNameFor($scope.channel), function(ngEvent, m) {
+            $scope.$apply(function() {
+                $scope.messages.push(m)
+            });
+            $scope.scrollDown(400);
         });
-        $scope.scrollDown(400);
-    });
-}]);
+    }]);
