@@ -56,7 +56,7 @@ angular
     // Make it possible to scrollDown to the bottom of the messages container
     $scope.scrollDown = function(time) {
         var $elem = $('.collection');
-        $('body').animate({
+        $('#theChat').animate({
             scrollTop: $elem.height()
         }, time);
     };
