@@ -8,14 +8,16 @@ html
     title Studious
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js')
-    script(src='https://cdn.pubnub.com/sdk/pubnub-angular/pubnub-angular-3.2.1.js')
-    script(src='javascripts/chat_controller.js')
     //if lte IE 8
       script(src='javascripts/ie/html5shiv.js')
     link(rel='stylesheet', href='css/main.css')
     //if lte IE 8
       link(rel='stylesheet', href='css/ie8.css')
+    script(src='https://cdn.pubnub.com/pubnub-3.15.2.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js')
+    script(src='https://cdn.pubnub.com/sdk/pubnub-angular/pubnub-angular-3.2.1.js')
+    script(src='javascripts/chat_controller.js')
+
   body.no-sidebar
       #page-wrapper
         // Header
@@ -27,8 +29,6 @@ html
                 a#logo(href='index.html') Studious
               hr
               p An online study environment built for students
-            footer
-              a.button.circled.scrolly(href='#banner') Start
           // Nav
           nav#nav
             ul
@@ -46,18 +46,28 @@ html
         // Main
         .wrapper.style1
           .container
-               ul
-                 li(ng-repeat='message in messages')
-                    img(src='{{avatarUrl(message.sender_uuid)}}', alt='{{message.sender_uuid}}')
+             chatbody(ng-app='app', ng-controller='ChatCtrl')
+               ul.collection
+                 li.collection-item.avatar(ng-repeat='message in messages')
+                    img.circle(ng-src = "{{avatarUrl(message.sender_uuid)}}")
+                    br
                     span.title Anonymous robot {{ message.sender_uuid }}
                     p
-                      | {{ message.date | date:"MM/dd/yyyy 'at' h:mma"}}
+                      i.prefix.mdi-action-alarm
+                      span.message-date {{ message.date | date:"MM/dd/yyyy 'at' h:mma"}}
                       br
                       |  {{ message.content }}
-               div(ng-controller='ChatCtrl')
-                form(ng-submit='sendMessage()')
-                  input(ng-model='messageContent', type='text', placeholder='Type your message')
-                  button(type='submit') Send
+               chatfooter.teal
+                form.container(ng-submit='sendMessage()')
+                 .row
+                     i.prefix.mdi-communication-chat
+                     input(ng-model='messageContent', type='text', placeholder='Type your message')
+                     span.chip.left
+                       img.circle(ng-src="{{avatarUrl(uuid)}}")
+                       p {{uuid}}
+                   .input-field.col.s10
+                     button.waves-effect.waves-light.btn-floating.btn-large(type='submit')
+                       i.mdi-content-send
         // Footer
         #footer
           .container
