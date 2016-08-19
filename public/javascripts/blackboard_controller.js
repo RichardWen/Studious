@@ -25,7 +25,7 @@ ctx.lineWidth = '3';
 ctx.lineCap = 'round';
 ctx.lineJoin = 'round';
 
-var color = #FFFFFF;
+var color = '#FFFFFF';
 
 canvas.addEventListener('mousedown', startDraw, false);
 canvas.addEventListener('mousemove', draw, false);
