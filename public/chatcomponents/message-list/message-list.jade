@@ -1,0 +1,3 @@
+ul.message-list.collection
+  li.collection-item.message-item.avatar(ng-repeat='message in messages track by message.uuid')
+    message-item(id='{{message.uuid}}', content='{{message.content}}', sender-uuid='{{message.sender_uuid}}', date='{{message.date}}')

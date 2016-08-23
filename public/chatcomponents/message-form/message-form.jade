@@ -1,0 +1,10 @@
+form.container(ng-submit='sendMessage()')
+ .row
+   .input-field.col.s5
+     i.prefix.mdi-communication-chat
+     input(ng-model='messageContent', type='text', placeholder='Type your message')
+     span.chip.left
+       div#user
+          |      You are Anonymous Robot {{uuid}}
+     button(type='submit') Send
+       i.mdi-content-send

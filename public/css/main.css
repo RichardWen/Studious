@@ -3094,11 +3094,12 @@ button {
   overflow-x: hidden;
   width: 300px;
   height: 500px;
+  margin-bottom: 50px;
 }
 #drawCanvas
 {
     position: relative;
     left: 350px;
-    bottom: 500px;
+    bottom: 600px;
     background-color:#000000;
 }

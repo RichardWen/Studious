@@ -16,7 +16,10 @@ router.get('/Blog', function(req, res, next) {
     res.render('blog', {title: 'Main'})
 });
 
-
+/* Get Partners page (currently a testing environment)*/
+router.get('/Partners', function(req, res, next) {
+    res.render('partners', {title: 'Partners'})
+});
 
 /* Get tbd page */
 router.get('/TBD', function(req, res, next) {

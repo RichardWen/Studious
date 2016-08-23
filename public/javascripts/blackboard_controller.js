@@ -10,9 +10,6 @@ pubnub.subscribe({
   channel: channel,
   callback: drawFromStream,
   presence: function(m){
-    if(m.occupancy > 0){
-      document.getElementById('occupancy').textContent = m.occupancy;
-    }
   }
 });
 
