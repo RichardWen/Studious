@@ -5,7 +5,7 @@ angular.module('app')
   // Aliasing this by self so we can access to this trough self in the inner functions
   var self = this;
   this.users = []
-  this.channel = 'messages-channel-blog3';
+  this.channel = 'studious-channel';
 
   var populate = function(){
 
@@ -55,6 +55,7 @@ angular.module('app')
   };
 
   var getOnlineUsers = function(){
+    console.log(self.users);
     return self.users;
   };
 
