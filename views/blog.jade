@@ -44,9 +44,38 @@ html
           article#main.special
             header
               h2
+                a(href='#') Splitting Things Up
+              p
+                | The Second Week - August 24th
+            a.image.featured(href='#')
+              img(src='images/banner-angularjs.jpg', alt='')
+            p
+              | Another solid week of coding. As far as UI goes, there's a now a users online in chat and some html elements
+              | got shifted around. The majority of my time this week however went into Angularjs and splitting up the
+              | code into multiple scripts with overarching controllers. Shifting code architecture is something I hadn't had
+              | experience with before, but I see the importance of it. Instead of having a singular chat_controller javascript
+              | file, I have multiple javascripts controlling individual components of the chat which affords me greater control
+              | over individual sections of the chat. The process of doing this splitting, however, proved difficult.
+            section
+              header
+                h3 Process
+              p
+                | If you click the upper link to go the 'Partners' page, you'll see a weird looking chat that is not what is
+                | on the main page. The reason is because I've reappropriated the page to be a testing environment for
+                | various functions. The issues with the chat as I was splitting it still exist here. For example, the chat
+                | doesn't autoscroll, the message forms aren't formed properly, the button I eventually did away with out of
+                | the current goal with the UI, etc.
+              p
+                | As of now, I'm sticking with my chat service as the feature to finish up. After getting it to a good state
+                | as a pure angular app, I'll then add the CSS to implement LaTeX as well as create login potential. The blackboard
+                | will be on the backburner for a bit
+
+          article#main.special
+            header
+              h2
                 a(href='#') And So It Begins
               p
-                | The First Week
+                | The First Week - August 17th
             a.image.featured(href='#')
               img(src='images/Beginning.jpg', alt='')
             p

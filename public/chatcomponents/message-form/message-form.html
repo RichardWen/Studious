@@ -3,11 +3,11 @@
         <div class="row">
             <div class="input-field col s10">
                 <i class="prefix mdi-communication-chat"></i>
-                <input ng-model="messageContent" type="text" placeholder="Type your message" >
-       <span class="chip left">
-          <user-avatar uuid="{{uuid}}"></user-avatar>
-          Anonymous robot #{{uuid}}
-       </span>
+                <input ng-model="messageContent" type="text" placeholder="Type your message" type-tracking />
+                <span class="chip left">
+                  Anonymous robot #{{uuid}} <br>
+                  <user-avatar uuid="{{uuid}}"></user-avatar>
+                </span>
             </div>
         </div>
     </form>

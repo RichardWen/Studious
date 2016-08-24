@@ -55,11 +55,14 @@ html
                 script(src='chatcomponents/services/current_user.js')
                 script(src='chatcomponents/services/message-factory.js')
                 script(src='chatcomponents/services/user.service.js')
+                script(src='chatcomponents/services/typing-indicator.service.js')
                 script(src='chatcomponents/services/user-avatar.directive.js')
+                script(src='chatcomponents/message-form/type-tracking.directive.js')
                 script(src='chatcomponents/message-form/message-form.directive.js')
                 script(src='chatcomponents/message-list/message-list.directive.js')
                 script(src='chatcomponents/message-item/message-item.directive.js')
                 script(src='chatcomponents/online-user-list/online-user-list.directive.js')
+                script(src='chatcomponents/typing-indicator-box/typing-indicator-box.directive.js')
                 .message-container
                   h3 Online
                   div#onlineUsers
@@ -67,10 +70,11 @@ html
                   h3 Chat
                   div#theChat
                     message-list
+                  typing-indicator-box
                   message-form
               div#canvasContainer
                 h2 Blackboard
-                canvas#drawCanvas(width='1200', height='800')
+                canvas#drawCanvas(width='800', height='800')
                 script(src='javascripts/blackboard_controller.js')
 
         // Footer
